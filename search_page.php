@@ -62,7 +62,6 @@ if(isset($_POST['add_to_cart'])){
          <a href="#about">about</a>
          <a href="menu.php">menu</a>
          <a href="#contact">contact</a>
-         <a href="logout.php">Logout</a>
       </nav>
 
       <div class="icons">
@@ -74,12 +73,9 @@ if(isset($_POST['add_to_cart'])){
       </div>
 
       <div class="profile">
-         <a href="user_update_profile.php" class="btn">update profile</a>
+         <a href="user_update_password.php" class="btn">update password</a>
+         <a href="reservation_details.php" class="btn">Reservation Details</a>
          <a href="logout.php" class="delete-btn">logout</a>
-         <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-         </div>
       </div>
 
       <?php echo "<h2>".$_SESSION['username']."</h2>"; ?>

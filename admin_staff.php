@@ -74,11 +74,6 @@ $image = $_FILES["image"]["name"];
             text-decoration:none;
         }
         
-        .item {
-            position: relative;
-            margin: 10px 390px;
-        }
-    
     </style>
 
 </head>
@@ -144,7 +139,7 @@ $image = $_FILES["image"]["name"];
 	             <td><?php echo $row['password'];?> </td>
                 <td><img src="images/<?php echo $row["image"];?>" height="100" width="100" /></img></td>
     
-                <td><a href="admin_update_staff.php?appu=<?php echo $row["id"];?>" class="GFG">Update</a></td>
+                <td><a href="admin_update_staff.php?appu=<?php echo $row['staffid']; ?>" class="GFG">Update</a></td>
             </tr>
 
             <?php

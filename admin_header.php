@@ -10,7 +10,7 @@
          <a href="admin_products.php">products</a>
          <a href="admin_orders.php">orders</a>
          <a href="admin_users.php">users</a>
-         <a href="admin_contacts.php">messages</a>
+         <a href="admin_reservation.php">reservations</a>
       </nav>
 
       <div class="icons">
@@ -32,10 +32,6 @@
       <div class="profile">
          <a href="admin_update_profile.php?update=<?php echo $row['a_id']; ?>" class="btn">update profile</a>
          <a href="admin_logout.php" class="delete-btn">logout</a>
-         <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-         </div>
       </div>
 
       <?php

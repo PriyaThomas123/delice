@@ -6,7 +6,6 @@ if(isset($_POST["submit"])){
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["number"];
-    $uid = $_POST["userid"];
     $password = $_POST["password"];
 
     if($_FILES["image"]["tmp_name"]!="")
@@ -15,7 +14,7 @@ if(isset($_POST["submit"])){
 	  $image = $row['image'];
     move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$_FILES["image"]["name"]);
     
-    mysqli_query($con,"UPDATE `tbl_staff` SET `name`='$name', `email`='$email', `phone`='$phone',`staff_id`='$uid', `password`='$password',`image`= '$image' WHERE id='$id'");
+    mysqli_query($con,"UPDATE `tbl_staff` SET `name`='$name', `email`='$email', `phone`='$phone',`staff_id`='$uid', `password`='$password',`image`= '$image' WHERE staffid='$id'");
 	header("Location:admin_staff.php");
 
 }
@@ -28,7 +27,7 @@ if(isset($_POST["submit"])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update staff</title>
+   <title>update staff details</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -52,7 +51,7 @@ if(isset($_POST["submit"])){
       <?php
       
         $id = $_GET['appu'];
-        $edit = mysqli_query($con, "SELECT * FROM `tbl_staff` WHERE id='$id' ");
+        $edit = mysqli_query($con, "SELECT * FROM `tbl_staff` WHERE staffid='$id' ");
         $row = mysqli_fetch_array($edit);
 
       ?>

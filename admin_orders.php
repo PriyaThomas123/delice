@@ -81,7 +81,7 @@ if(!isset($user_id)){
                 <th>Total Price</th>
                 <th>Date Added</th>
                 <th>Status</th>
-                <th>Assign Staff</th>
+                <th colspan="2">Assign Staff</th>
                 <th>Update</th>
             </tr>
 
@@ -99,7 +99,13 @@ if(!isset($user_id)){
                 <td><?php echo $row['name'];?> </td>
                 <td><?php echo $row['number'];?> </td>
                 <td><?php echo $row['email'];?> </td>
-                <td><?php echo $row['address'];?> </td>
+                <td>
+                    <?php echo $row['flatnumber'];?>,
+                    <?php echo $row['street'];?>,
+                    <?php echo $row['city'];?>,
+                    <?php echo $row['area'];?>,
+                    <?php echo $row['pincode'];?>
+                </td>
                 <td><?php echo $row['total_products'];?> </td>
 	            <td><?php echo $row['total_price'];?> </td>
                 <td><?php echo $row['placed_on'];?> </td>
@@ -120,6 +126,18 @@ if(!isset($user_id)){
                         </option>
                         <?php endwhile; ?>
                     </select>
+                </td>
+                <td>
+                <?php
+                    if(isset($_POST['submit'])){
+                        if(!empty($_POST['staffname'])) {
+                            $selected = $_POST['staffname'];
+                            echo 'You have chosen: ' . $selected;
+                        } else {
+                            echo 'Please select the value.';
+                        }
+                    }
+                ?>
                 </td>
     
                 <td><input type="submit" name="submit" value="apply" class="btn"></td>

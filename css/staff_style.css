@@ -19,18 +19,20 @@ section{
 
 .btn2{
    display: block;
+   width: 100%;
    margin-top: 1rem;
    border-radius: .5rem;
-   cursor: pointer;
    color:var(--white);
-   font-size: 1.8rem;
-   padding:1rem 3rem;
-   background-color: var(--green);
+   font-size: 2rem;
+   padding:1.3rem 3rem;
+   text-transform: capitalize;
+   cursor: pointer;
+   text-align: center;
 }
 
-.btn2:hover{
-   background-color: var(--black);
-}
+.btn2{
+    background-color: var(--green);
+ }
 
 .dashboard .box-container{
    display: grid;
@@ -215,35 +217,6 @@ section{
 }
 
 
-/* Staff register form */
-.register .row{
-   align-items: center;
-   flex-wrap: wrap;
-   gap:2rem;
-}
-
-.register .row form{
-   flex:1 1 30rem;
-   border:var(--border);
-   padding:2rem;
-   text-align: center;
-}
-
-.register .row form h3{
-   font-size: 2.5rem;
-   margin-bottom: 1rem;
-   color:var(--black);
-}
-
-.register .row form .box{
-   width: 100%;
-   padding:1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
-   border:var(--border);
-   margin:1rem 0;
-}
-
 
 
 /*  Order Table  */
@@ -272,22 +245,22 @@ section{
 
 
   /*  Staff's Assign Order Table  */
-#customers {
+#staff {
    font-family: Arial, Helvetica, sans-serif;
    border-collapse: collapse;
    width: 50%;
  }
  
- #customers td, #customers th {
+ #staff td, #staff th {
    border: 1px solid #ddd;
    padding: 8px;
  }
  
- #customers tr:nth-child(even){background-color: #f2f2f2;}
+ #staff tr:nth-child(even){background-color: #f2f2f2;}
  
- #customers tr:hover {background-color: #ddd;}
+ #staff tr:hover {background-color: #ddd;}
  
- #customers th {
+ #staff th {
    padding-top: 12px;
    padding-bottom: 12px;
    text-align: left;
@@ -304,29 +277,7 @@ section{
 
 
 
-/*  staff details Table  */
-#staff {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-  }
-  
-  #staff td, #staff th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #staff tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #staff tr:hover {background-color: #ddd;}
-  
-  #staff th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #3a86ff;
-    color: white;
-  }
+
 
 
 @media (max-width:768px){
