@@ -44,6 +44,12 @@ if(isset($_GET['delete'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/cart.css">
 
+   <style>
+      h4 {
+         font-size: 2em;
+      }
+   </style>
+
 </head>
 <body>
 
@@ -72,8 +78,9 @@ if(isset($message)){
 
       <nav class="navbar">
          <a href="home.php">home</a>
-         <a href="#about">about</a>
          <a href="menu.php">menu</a>
+         <a href="reservation.php">reservation</a>
+         <a href="track-order.php">track order</a>
          <a href="orders.php">orders</a>
       </nav>
    
@@ -87,7 +94,8 @@ if(isset($message)){
       </div>
 
       <div class="profile">
-         <a href="user_update_profile.php" class="btn">update profile</a>
+         <a href="user_update_password.php" class="btn">update password</a>
+         <a href="reservation_details.php" class="btn">Reservation Details</a>
          <a href="logout.php" class="delete-btn">logout</a>
       </div>
 
@@ -153,12 +161,13 @@ if(isset($message)){
         }
         ?>
     </div>
+    <br><br><br>
 
-    <h4>grand total : <span>Rs.<p id="grandtotal"><?php echo $grand_total; ?></p></span></h4>
+    <center><h4>grand total : <span><p id="grandtotal">Rs.<?php echo $grand_total; ?></p></span></h4>
     
     <div class="cart-total">
       <a href="menu.php" class="option-btn">continue shopping</a>
-      <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
+      <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('Do you really want to delete?');";>delete all</a>
       <a href="checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
    </div>
    

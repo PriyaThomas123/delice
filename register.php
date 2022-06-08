@@ -107,17 +107,17 @@ if($password == $cpassword){
 
       <form action="register.php" name="myform" method="POST">
          <input type="text" name="name" id="name" required class="box"  placeholder="Enter your name" onblur="validation()">
-         <font color="red"><p id = "ename"></p></font>
+         <p id = "ename" style="color:red;font-size:20px;"></p>
          <input type="email" name="email" id="email" required class="box" placeholder="Enter email address" onblur="validation2()">
-         <font color="red"><p id = "eemail"></p></font>
+         <p id = "eemail" style="color:red;font-size:20px;"></p>
          <input type="text" name="number" id="phone" required class="box" placeholder="Enter your phonenumber" onblur="validation3()">
-         <font color="red"><p id = "enum"></p></font>
+         <p id = "enum" style="color:red;font-size:20px;"></p>
          <input type="text" name="username" id="uname" required class="box" placeholder="Enter your username" onblur="validation4()">
-         <font color="red"><p id = "euname"></p></font>
+         <p id = "euname" style="color:red;font-size:20px;"></p>
          <input type="password" name="password" id="pass" required class="box" placeholder="Enter your password" onblur="validation5()">
-         <font color="red"><p id = "epass"></p></font>
+         <p id = "epass" style="color:red;font-size:20px;"></p>
          <input type="password" name="cpassword" id="cpass" required class="box" placeholder="Enter your confirm password" onblur="validation6()">
-         <font color="red"><p id = "ecpass"></p></font>
+         <p id = "ecpass" style="color:red;font-size:20px;"></p>
          <input type="submit" name="submit" value="register" class="btn">
       </form>
 
@@ -175,7 +175,7 @@ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return true;
   }
   else{
-    document.getElementById("eemail").innerHTML="Invalid Format";
+    document.getElementById("eemail").innerHTML="You have entered an invalid email address!";
     name2.focus();
     return false;
   }
@@ -197,7 +197,7 @@ function validation3()
       return true;
     }
     else{
-      document.getElementById("enum").innerHTML="Invalid Format";
+      document.getElementById("enum").innerHTML="Invalid Format. Please enter only digits..";
       unum.focus();
       return false;
     }
@@ -218,7 +218,7 @@ function validation4(){
       return true;
    }
    else{
-      document.getElementById("euname").innerHTML="Invalid";
+      document.getElementById("euname").innerHTML="Invalid Format(Please enter uppercase letters or lowercase letters ur digits).";
       u_name.focus();
       return false;
    }
@@ -240,7 +240,7 @@ function validation5()
       return true;
     }
     else{
-      document.getElementById("epass").innerHTML="Invalid Format";
+      document.getElementById("epass").innerHTML="Invalid Format(password between 6 to 10 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character).";
       paswd.focus();
       return false;
     }

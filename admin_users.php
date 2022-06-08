@@ -1,6 +1,6 @@
 <?php
 
-include 'db_connect.php';
+include ('db_connect.php');
 
 
 if(isset($_GET['delete'])){
@@ -27,6 +27,7 @@ if(isset($_GET['delete'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/admin_style.css">
+   <link rel="stylesheet" href="css/components.css">
 
 </head>
 <body>

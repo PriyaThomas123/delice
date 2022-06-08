@@ -36,11 +36,6 @@ if(!isset($user_id)){
         <h1 class="title">dashboard</h1>
         
             <div class="box-container">
-                <div class="box">
-                    <h3>$</-</h3>
-                    <p>total pendings</p>
-                    <a href="admin_orders.php" class="btn">see orders</a>
-                </div>
 
                 <div class="box">
                     <p>orders placed</p>
@@ -77,8 +72,8 @@ if(!isset($user_id)){
                 </div>
 
                 <div class="box">
-                    <p>total messages</p>
-                    <a href="admin_contacts.php" class="btn">see messages</a>
+                    <p>total reservations</p>
+                    <a href="admin_reservation.php" class="btn">see reservations</a>
                 </div>
             </div>
 

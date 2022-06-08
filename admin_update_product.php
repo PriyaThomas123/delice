@@ -60,10 +60,10 @@ if(isset($_POST["update_product"])){
       <input type="number" name="price" min="0" placeholder="enter product price" required class="box" value="<?php echo $row['price']; ?>">
       <select name="category" class="box" required>
          <option selected><?php echo $row['category']; ?></option>
-         <option value="vegitables">vegitables</option>
-         <option value="fruits">fruits</option>
-         <option value="meat">meat</option>
-         <option value="fish">fish</option>
+         <option value="vegitables">Veg</option>
+         <option value="fruits">Non-veg</option>
+         <option value="meat">Desserts</option>
+         <option value="fish">Drinks</option>
       </select>
       <input type="text" name="details" required placeholder="enter product details" class="box" cols="30" rows="10" value="<?php echo $row['details']; ?>">
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">

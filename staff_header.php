@@ -1,6 +1,20 @@
 
 <header class="header">
 
+<?php
+
+      if(isset($message)){
+         foreach($message as $message){
+         echo '
+         <div class="message">
+            <span>'.$message.'</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+         }
+      }
+   ?>
+
 <div class="flex">
 
    <a href="staff_page.php" class="logo">Staff<span>Panel</span></a>
@@ -27,7 +41,7 @@
    ?>
 
    <div class="profile">
-      <a href="staff_update_profile.php?update=<?php echo $row['a_id']; ?>" class="btn">update profile</a>
+      <a href="staff_update_profile.php?update=<?php echo $row['staffid']; ?>" class="btn">update profile</a>
       <a href="staff_logout.php" class="delete-btn">logout</a>
    </div>
 

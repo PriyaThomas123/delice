@@ -6,10 +6,17 @@ if(isset($_POST['update_profile'])){
 
    $username = $_POST['username'];
    $email = $_POST['email'];
+   $cpassword = $_POST['update_pass'];
    $new_pass = $_POST['new_pass'];
 
-   mysqli_query($con, "UPDATE `tbl_admin` SET username = '$username', email = '$email', password = '$new_pass' ");
-   
+   $query = mysqli_query($con, "select username from tbl_admin where username ='$user_id' and   password='$cpassword'");
+   $row = mysqli_fetch_array($query);
+   if($row>0){
+      $ret = mysqli_query($con,"update tbl_admin set password='$newpassword' where username ='$user_id'");
+      $msg = "Your password successully changed"; 
+   } else {
+      $msg="Your current password is wrong";
+   }
 
 }
 

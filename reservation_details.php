@@ -28,18 +28,7 @@ if(!isset($user_id)){
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--JS function of button to save html to pdf-->
-    <script>
-        function generatePDF() {
-            const element = document.getElementById('invoice');
-            html2pdf().from(element).save("Invoice.pdf");
-        }
-    </script>
 
-    <style>
-        #invoice {
-            box-sizing: inherit;        
-        }
-    </style>
 
 </head>
 <body>
@@ -87,36 +76,32 @@ if(!isset($user_id)){
 
 <section class="placed-orders">
 
-   <h1 class="title">placed orders</h1>
+   <h1 class="title">reservation details</h1>
 
    <div class="box-container">
 
    <?php
-      $select_orders = mysqli_query($con, "SELECT * FROM `orders` WHERE username = '$user_id'");
+      $select_orders = mysqli_query($con, "SELECT * FROM `reservation` WHERE username = '$user_id'");
       $check = mysqli_num_rows($select_orders)>0;
 
       if($check){
         while($fetch_orders = mysqli_fetch_array($select_orders)){ 
    ?>
    <div class="box" id="invoice">
-      <h1 itemprop="headline">Order #<?php echo $fetch_orders['ordernumber'];?> Details</h1>
-      <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
       <p> Username : <span><?php echo $fetch_orders['username']; ?></span> </p>
-      <p> number : <span><?php echo $fetch_orders['number']; ?></span> </p>
+      <p> Name : <span><?php echo $fetch_orders['name']; ?></span> </p>
       <p> email : <span><?php echo $fetch_orders['email']; ?></span> </p>
-      <p> flatnumber : <span><?php echo $fetch_orders['flatnumber']; ?></span> </p>
-      <p> street : <span><?php echo $fetch_orders['street']; ?></span> </p>
-      <p> city : <span><?php echo $fetch_orders['city']; ?></span> </p>
-      <p> area : <span><?php echo $fetch_orders['area']; ?></span> </p>
-      <p> pincode : <span><?php echo $fetch_orders['pincode']; ?></span> </p>
-      <p> orders : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-      <p> total price : <span>Rs.<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
+      <p> number : <span><?php echo $fetch_orders['phone']; ?></span> </p>
+      <p> Date : <span><?php echo $fetch_orders['date']; ?></span> </p>
+      <p> Time : <span><?php echo $fetch_orders['time']; ?></span> </p>
+      <p> Status : <span><?php echo $fetch_orders['status']; ?></span> </p>
+      <button class="fcc-btn">Cancel</button>
    </div>
-   <button onclick="generatePDF()" class="fcc-btn">Invoice</button>
+   
    <?php
       }
    }else{
-      echo '<p class="empty">no orders placed yet!</p>';
+      echo '<p class="empty">not reserved yet!</p>';
    }
    ?>
 

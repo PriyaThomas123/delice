@@ -76,8 +76,9 @@ if(isset($message)){
 
       <nav class="navbar">
          <a href="home.php">home</a>
-         <a href="#about">about</a>
          <a href="#menu">menu</a>
+         <a href="reservation.php">reservation</a>
+         <a href="track-order.php">track order</a>
          <a href="orders.php">orders</a>
       </nav>
    
@@ -91,7 +92,8 @@ if(isset($message)){
       </div>
 
       <div class="profile">
-         <a href="user_update_profile.php" class="btn">update profile</a>
+         <a href="user_update_password.php" class="btn">update password</a>
+         <a href="reservation_details.php" class="btn">Reservation Details</a>
          <a href="logout.php" class="delete-btn">logout</a>
       </div>
 
