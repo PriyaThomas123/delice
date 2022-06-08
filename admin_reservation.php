@@ -134,7 +134,7 @@ if(isset($_GET['action']) == "cid"){
     </section>
 
 
-    <!-- custom js file link  -->
+    <!-- custom  -->
     <script src="js/script2.js"></script>
 
 </body>
